@@ -36,21 +36,13 @@ function CardInfo(){
     }
 
 
-
-
-       
-
-
-
     return (
     <div className="cardInfo" >
 
             <div className="container">
 
-                <img src="/public/img/certify.png" alt="certufy" />
-
                 <div className="banner">
-                    <img src={card.src} alt={card.name} />
+                    <img src={card.src} alt={card.name} className="img-fluid"/>
     
                     <div className="SlidePoint">
                         <div className={point === 0?"activePoint":null} id="0" onClick={handleClick}></div>
@@ -61,15 +53,21 @@ function CardInfo(){
                 </div>
     
                 <div className="content" >
-                    <small> {card.date} </small>
-                    <h3> {card.name} </h3>
-                    <hr className="m-2 mx-0"/>
+                    <div className="date-content">
+                        <small> {card.date} </small>
+                    </div>
+                    <h3 className="my-1"> 
+                        {card.name}
+                        <img src="/public/img/certify.png" alt="certufy" className="img-fluid"/>
+                    </h3>
+                    <hr className="my-1 mx-0"/>
                     <p> {card.legend} </p>
-                    <a href="" className="shadow-none">
-                         READ MORE
-                         <div className="shadow shadow1 shadow-none" ></div>
-                         <div className="shadow shadow2 shadow-none"></div>
-                         <div className="shadow shadow3 shadow-none"></div>
+                    
+                    <a href="" className="b1 shadow-none">
+                        <span>Read more</span>
+                        <div className="shadow shadow1 shadow-none" ></div>
+                        <div className="shadow shadow2 shadow-none"></div>
+                        <div className="shadow shadow3 shadow-none"></div>
                     </a>
                 </div>
             </div>
