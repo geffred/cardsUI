@@ -153,11 +153,10 @@
     display: flex;
     justify-content: space-between;
     gap: 2px;
-
 }
 
 .SlidePoint div {
-
+    transition:all .5s ease;
     width: 20%;
     border-radius: 50px;
     background: #4d7cff40;
