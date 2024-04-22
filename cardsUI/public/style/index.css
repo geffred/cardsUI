@@ -1,0 +1,11 @@
+:root{
+    --dark:#1f1f1f;
+}
+
+body{
+    background:var(--dark) ;
+}
+
+*{
+    box-sizing: border-box;
+}
