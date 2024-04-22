@@ -7,6 +7,8 @@ function App() {
    <main>
       <div className="container">
           <CardInfo />
+          <CardInfo />
+          <CardInfo />
       </div>
    </main>
   )

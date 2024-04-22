@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "/public/style/cardInfo.css"
 function CardInfo(){
 
-    const [point , setPoint] = useState(1)
+    const [active , setActive] = useState(null)
+    const [point , setPoint] = useState(0)
     const cards = [
         {
             "id":0,
@@ -27,17 +28,23 @@ function CardInfo(){
         }
            
     ]
-    const [card , setCard] = useState(cards[2])
+    const [card , setCard] = useState(cards[0])
 
-    const handleClick = (e)=>{
-        const id = parseInt(e.target.id)
+    const handleClick = (id)=>{
         setPoint(id)
         setCard(cards[id])
+        setActive("show")
+
+        setTimeout(()=>{
+            setActive("")
+        },1000)
     }
 
 
     return (
     <div className="cardInfo" >
+
+            <img src="/public/img/code.jpg" alt="" />
 
             <div className="container">
 
@@ -45,14 +52,14 @@ function CardInfo(){
                     <img src={card.src} alt={card.name} className="img-fluid"/>
     
                     <div className="SlidePoint">
-                        <div className={point === 0?"activePoint":null} id="0" onClick={handleClick}></div>
-                        <div className={point === 1?"activePoint":null} id="1" onClick={handleClick} ></div>
-                        <div className= {point === 2?"activePoint":null} id="2" onClick={handleClick}></div>
+                        <div className={point === 0?"activePoint":null}  onClick={()=>handleClick(0)}></div>
+                        <div className={point === 1?"activePoint":null}  onClick={()=>handleClick(1)} ></div>
+                        <div className= {point === 2?"activePoint":null}  onClick={()=>handleClick(2)}></div>
                     </div>
     
                 </div>
     
-                <div className="content" >
+                <div className={"content "+active} >
                     <div className="date-content">
                         <small> {card.date} </small>
                     </div>
