@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "/public/style/cardInfo.css"
 function CardInfo(){
 
@@ -25,10 +25,7 @@ function CardInfo(){
             "name": "Gohan",
             "legend": "Gohan est le fils de Goku et l'un des personnages principaux de Dragon Ball. Bien qu'il préfère la paix à la violence, il possède un immense potentiel de combat et a sauvé la Terre à plusieurs reprises."
         }
-        
-        
-        
-        
+           
     ]
     const [card , setCard] = useState(cards[2])
 
@@ -39,11 +36,18 @@ function CardInfo(){
     }
 
 
-    
+
+
+       
+
+
+
     return (
     <div className="cardInfo" >
 
             <div className="container">
+
+                <img src="/public/img/certify.png" alt="certufy" />
 
                 <div className="banner">
                     <img src={card.src} alt={card.name} />
@@ -56,7 +60,7 @@ function CardInfo(){
     
                 </div>
     
-                <div className="content">
+                <div className="content" >
                     <small> {card.date} </small>
                     <h3> {card.name} </h3>
                     <hr className="m-2 mx-0"/>
