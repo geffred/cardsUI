@@ -1,44 +1,46 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "/public/style/cardInfo.css"
+
+const cards = [
+    {
+        "id":0,
+        "date":"26 Mars 2024",
+        "src":"/public/img/goku.jpg",
+        "name":"Son Goku",
+        "legend":"Goku est le héros de Dragon Ball, un Saiyan passionné de combat,toujours en quête de devenir plus fort pour protéger la Terre."
+    },
+    {
+        "id":1,
+        "date": "15 Août 2023",
+        "src": "/public/img/vegeta.jpg",
+        "name": "Vegeta",
+        "legend": "Vegeta est un prince Saiyan rival de Goku, souvent arrogant mais incroyablement puissant. Son obsession est de surpasser Goku et de prouver sa propre valeur."
+    },
+    {
+        "id":2,
+        "date": "3 Mai 2025",
+        "src": "/public/img/gohan.jpg",
+        "name": "Gohan",
+        "legend": "Gohan est le fils de Goku et l'un des personnages principaux de Dragon Ball. Bien qu'il préfère la paix à la violence, il possède un immense potentiel de combat et a sauvé la Terre à plusieurs reprises."
+    }
+       
+]
+
 function CardInfo(){
 
     const [active , setActive] = useState(null)
     const [point , setPoint] = useState(0)
-    const cards = [
-        {
-            "id":0,
-            "date":"26 Mars 2024",
-            "src":"/public/img/goku.jpg",
-            "name":"Son Goku",
-            "legend":"Goku est le héros de Dragon Ball, un Saiyan passionné de combat,toujours en quête de devenir plus fort pour protéger la Terre."
-        },
-        {
-            "id":1,
-            "date": "15 Août 2023",
-            "src": "/public/img/vegeta.jpg",
-            "name": "Vegeta",
-            "legend": "Vegeta est un prince Saiyan rival de Goku, souvent arrogant mais incroyablement puissant. Son obsession est de surpasser Goku et de prouver sa propre valeur."
-        },
-        {
-            "id":2,
-            "date": "3 Mai 2025",
-            "src": "/public/img/gohan.jpg",
-            "name": "Gohan",
-            "legend": "Gohan est le fils de Goku et l'un des personnages principaux de Dragon Ball. Bien qu'il préfère la paix à la violence, il possède un immense potentiel de combat et a sauvé la Terre à plusieurs reprises."
-        }
-           
-    ]
     const [card , setCard] = useState(cards[0])
+   
+    
 
     const handleClick = (id)=>{
         setPoint(id)
         setCard(cards[id])
         setActive("show")
-
-        setTimeout(()=>{
-            setActive("")
-        },1000)
     }
+
+
 
 
     return (
