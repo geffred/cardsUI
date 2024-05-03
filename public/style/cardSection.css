@@ -1,16 +1,42 @@
-.cardSection {
-
+.cardSectionContainer{
     max-width: 300px;
     border: 1px solid rgba(255, 255, 255, 0.058);
-    margin: 20px auto;
-    padding: 5px;
+    margin: 50px auto;
     border-radius: 10px;
+    background:  rgb(22, 22, 22);
+    position: relative;
+}
+
+.cardSectionContainer::after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -5;
+    border-radius: 10px;
+    transform-origin: bottom left;
+    background: url('/public/img/mob.jpg');
+    background-size: cover;
+    transition: all .5s ease;
+    border: 1px solid rgb(108, 108, 108);
+}
+
+.cardSectionContainer:hover::after{
+    transform: rotate(-5deg);
+}
+
+.cardSection {
+    max-width: 300px;
+    padding: 5px;
     position: relative;
     overflow: hidden;
     color: rgba(255, 255, 255, 0.296);
     transform: all .5s ease;
-    background:  rgba(22, 22, 22, 0.478);
-   
+    border-radius: 10px;
+    transform-origin: bottom left;
 }
 
 .cardSection:hover {

@@ -1,20 +1,22 @@
+/* eslint-disable react/prop-types */
 import '/public/style/cardSection.css'
 
-function CardSection(){
+function CardSection({title ,name , img , description}){
 
     return(
 
-        <div className="cardSection">
-            <div className="imageContainer">
-                <img src="/public/img/mob.jpg" alt="vegeta" />
-            </div>
-            <div className="content">
-                <a href="#"> {"Jouer "} </a>
-                <p>
-                  Le mob de Mob Psycho 100 : une entité en constante évolution,
-                   débordant de puissance psychique latente.
-                </p>
-            </div>
+        <div className='cardSectionContainer'>
+            <div className="cardSection">
+                <div className="imageContainer">
+                    <img src={img} alt={name} />
+                </div>
+                <div className="content">
+                    <a href="#"> {title} </a>
+                    <p>
+                        {description}
+                    </p>
+                </div>
+             </div>
         </div>
     )
 }
